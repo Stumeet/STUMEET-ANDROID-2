@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.aramtory.stumeet.presentation.home.HomeFragment"
+        android:label="HomeStumeetFragment" />
+    <fragment
+        android:id="@+id/navigation_study"
+        android:name="com.aramtory.stumeet.presentation.study.StudyFragment"
+        android:label="StudyStumeetFragment" />
+    <fragment
+        android:id="@+id/navigation_calendar"
+        android:name="com.aramtory.stumeet.presentation.calendar.CalendarFragment"
+        android:label="CalendarStumeetFragment" />
+    <fragment
+        android:id="@+id/navigation_my"
+        android:name="com.aramtory.stumeet.presentation.my.MyFragment"
+        android:label="MyStumeetFragment" />
+</navigation>
