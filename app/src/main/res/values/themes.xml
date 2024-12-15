@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Stumeet" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_700</item>
+        <item name="colorOnPrimary">@color/gray_50</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/primary_50</item>
+        <item name="colorSecondaryVariant">@color/primary_100</item>
+        <item name="colorOnSecondary">@color/gray_75</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.Stumeet" parent="Base.Theme.Stumeet" />
+
+    <style name="Theme.Toolbar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/gray_50</item>
+        <item name="elevation">0dp</item>
+        <item name="android:windowBackground">@color/gray_50</item>
+    </style>
+
+</resources>
