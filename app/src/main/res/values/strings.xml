@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Stumeet</string>
-    <string name="navigation_home">HOME</string>
-    <string name="navigation_study">STUDY</string>
-    <string name="navigation_calendar">CALENDAR</string>
-    <string name="navigation_my">MY</string>
+    <string name="navigation_home">홈</string>
+    <string name="navigation_study">스터디</string>
+    <string name="navigation_calendar">캘린더</string>
+    <string name="navigation_my">마이</string>
 </resources>
