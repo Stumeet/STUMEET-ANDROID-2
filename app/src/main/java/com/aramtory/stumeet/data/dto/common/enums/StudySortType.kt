@@ -1,10 +1,12 @@
 package com.aramtory.stumeet.data.dto.common.enums
 
-enum class StudySortType(private val state: String) {
-    ACTIVE("활성"),
-    FINISHED("완료");
+import com.aramtory.stumeet.R
 
-    fun getStudySortType(studySortType: StudySortType): String {
-        return studySortType.state
+enum class StudySortType(private val stateResId: Int) {
+    ACTIVE(R.string.enum_study_sort_active),
+    FINISHED(R.string.enum_study_sort_finished);
+
+    fun getStudySortType(studySortType: StudySortType): Int {
+        return studySortType.stateResId
     }
 }
