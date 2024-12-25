@@ -1,11 +1,13 @@
 package com.aramtory.stumeet.data.dto.common.enums
 
-enum class ReviewSortType(private val sort: String) {
-    LATEST("최근순"),
-    HIGHEST_RATING("별점 높은순"),
-    LOWEST_RATING("별점 낮은순");
+import com.aramtory.stumeet.R
 
-    fun getReviewSort(reviewSortType : ReviewSortType): String {
-        return reviewSortType.sort
+enum class ReviewSortType(private val sortResId: Int) {
+    LATEST(R.string.enum_review_sort_latest),
+    HIGHEST_RATING(R.string.enum_review_sort_highest_rating),
+    LOWEST_RATING(R.string.enum_review_sort_lowest_rating);
+
+    fun getReviewSort(reviewSortType : ReviewSortType): Int {
+        return reviewSortType.sortResId
     }
 }

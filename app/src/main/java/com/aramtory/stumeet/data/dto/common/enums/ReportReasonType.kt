@@ -1,14 +1,16 @@
 package com.aramtory.stumeet.data.dto.common.enums
 
-enum class ReportReasonType(private val reason: String) {
-    COMMERCIAL_ADVERTISEMENT_AND_SPAM("상업적 광고 및 스팸"),
-    PORNOGRAPHY_AND_HARMFUL_ACTIVITIES("음란물 및 유해성 활동"),
-    PROFANITY_AND_SLANDER("욕설 및 비방"),
-    FRAUD_OR_IMPERSONATION("사기 또는 사칭"),
-    FLOODING("도배"),
-    OTHERS("기타");
+import com.aramtory.stumeet.R
 
-    fun getReportReasonType(reportReasonType: ReportReasonType): String {
-        return reportReasonType.reason
+enum class ReportReasonType(private val reasonResId: Int) {
+    COMMERCIAL_ADVERTISEMENT_AND_SPAM(R.string.enum_reason_spam),
+    PORNOGRAPHY_AND_HARMFUL_ACTIVITIES(R.string.enum_reason_harmful),
+    PROFANITY_AND_SLANDER(R.string.enum_reason_slander),
+    FRAUD_OR_IMPERSONATION(R.string.enum_reason_fraud),
+    FLOODING(R.string.enum_reason_flooding),
+    OTHERS(R.string.enum_reason_others);
+
+    fun getReportReasonType(reportReasonType: ReportReasonType): Int {
+        return reportReasonType.reasonResId
     }
 }

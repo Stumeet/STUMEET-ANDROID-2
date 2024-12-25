@@ -1,10 +1,12 @@
 package com.aramtory.stumeet.data.dto.common.enums
 
-enum class ReportType(private val type: String) {
-    STUDY("스터디"),
-    ACTIVITY("활동");
+import com.aramtory.stumeet.R
 
-    fun getReportType(reportType: ReportType): String {
-        return reportType.type
+enum class ReportType(private val typeResId: Int) {
+    STUDY(R.string.enum_report_study),
+    ACTIVITY(R.string.enum_report_activity);
+
+    fun getReportType(reportType: ReportType): Int {
+        return reportType.typeResId
     }
 }

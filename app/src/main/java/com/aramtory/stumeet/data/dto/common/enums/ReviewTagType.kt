@@ -1,24 +1,26 @@
 package com.aramtory.stumeet.data.dto.common.enums
 
-enum class ReviewTagType(private val tag: String) {
-    DILIGENCE("귀차니즘"),
-    TASK_COMMITMENT("과제 성실도"),
-    CONSISTENT_ATTENDANCE("프로개근러"),
-    BEST_LEADER("최고의 리더"),
-    BEST_SUPPORTER("최고의 서포터"),
-    FAST_RESPONSE("빠른 응답"),
-    SLOW_RESPONSE("느린 응답"),
-    DECISIVE_J("확신의 J"),
-    FLEXIBLE_P("확신의 P"),
-    MAX_RESPONSIBILITY("책임감 MAX"),
-    MOOD_MAKER("분위기 메이커"),
-    EFFORT_TOP("노력 1등"),
-    NEEDS_IMPROVEMENT("분발이 필요해요"),
-    NEAT_NOTES("깔끔한 필기"),
-    PINPOINT_TEACHER("쪽집게 강사");
+import com.aramtory.stumeet.R
+
+enum class ReviewTagType(private val tagResId: Int) {
+    DILIGENCE(R.string.enum_review_tag_diligence),
+    TASK_COMMITMENT(R.string.enum_review_tag_task_commitment),
+    CONSISTENT_ATTENDANCE(R.string.enum_review_tag_consistent_attendance),
+    BEST_LEADER(R.string.enum_review_tag_best_leader),
+    BEST_SUPPORTER(R.string.enum_review_tag_best_supporter),
+    FAST_RESPONSE(R.string.enum_review_tag_fast_response),
+    SLOW_RESPONSE(R.string.enum_review_tag_slow_response),
+    DECISIVE_J(R.string.enum_review_tag_j),
+    FLEXIBLE_P(R.string.enum_review_tag_p),
+    MAX_RESPONSIBILITY(R.string.enum_review_tag_max_responsibility),
+    MOOD_MAKER(R.string.enum_review_tag_mood_maker),
+    EFFORT_TOP(R.string.enum_review_tag_effot_top),
+    NEEDS_IMPROVEMENT(R.string.enum_review_tag_needs_improvement),
+    NEAT_NOTES(R.string.enum_review_tag_neat_notes),
+    PINPOINT_TEACHER(R.string.enum_review_tag_pinpoint_teacher);
 
 
-    fun getReviewTagSort(reviewTagType: ReviewTagType): String {
-        return reviewTagType.tag
+    fun getReviewTagSort(reviewTagType: ReviewTagType): Int {
+        return reviewTagType.tagResId
     }
 }
