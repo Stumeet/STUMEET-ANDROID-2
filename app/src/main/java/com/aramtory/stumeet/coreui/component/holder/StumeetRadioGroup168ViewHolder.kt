@@ -3,25 +3,27 @@ package com.aramtory.stumeet.coreui.component.holder
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.aramtory.stumeet.coreui.component.data.StumeetRadioButtonSettingDto
-import com.aramtory.stumeet.databinding.ComponentRadioButtonItemBinding
+import com.aramtory.stumeet.databinding.ComponentRadioButtonItem168Binding
 
-class StumeetRadioGroupViewHolder(private val binding: ComponentRadioButtonItemBinding) :
+class StumeetRadioGroup168ViewHolder(private val binding: ComponentRadioButtonItem168Binding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    private val _itemBinding: ComponentRadioButtonItemBinding = binding
-    val itemBinding: ComponentRadioButtonItemBinding = _itemBinding
+    private val _itemBinding: ComponentRadioButtonItem168Binding = binding
+    val itemBinding: ComponentRadioButtonItem168Binding = _itemBinding
 
     fun bind(data: StumeetRadioButtonSettingDto) {
         // text 설정
         with(binding.tvBasicRadioButton) {
             // Background 설정
-            if(data.backgroundTintResId != null){
+            if (data.backgroundTintResId != null) {
                 setBackgroundResource(data.backgroundTintResId!!)
             }
 
             // Text color 설정
-            if(data.textColorResId != null){
-                setTextColor(ContextCompat.getColorStateList(context, data.textColorResId!!) ?: return)
+            if (data.textColorResId != null) {
+                setTextColor(
+                    ContextCompat.getColorStateList(context, data.textColorResId!!) ?: return
+                )
             }
 
             // Drawable 설정

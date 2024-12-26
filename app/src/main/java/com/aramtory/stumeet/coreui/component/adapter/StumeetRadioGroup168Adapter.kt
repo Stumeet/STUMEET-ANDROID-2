@@ -6,26 +6,29 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.aramtory.stumeet.coreui.adapter.ItemClick
 import com.aramtory.stumeet.coreui.component.data.StumeetRadioButtonSettingDto
-import com.aramtory.stumeet.coreui.component.holder.StumeetRadioGroupViewHolder
-import com.aramtory.stumeet.databinding.ComponentRadioButtonItemBinding
+import com.aramtory.stumeet.coreui.component.holder.StumeetRadioGroup168ViewHolder
+import com.aramtory.stumeet.databinding.ComponentRadioButtonItem168Binding
 
-class StumeetRadioGroupAdapter(private val isSelectable : Boolean) :
-    ListAdapter<StumeetRadioButtonSettingDto, StumeetRadioGroupViewHolder>(
-        StumeetRadioGroupDiffCallback()
+class StumeetRadioGroup168Adapter(private val isSelectable: Boolean) :
+    ListAdapter<StumeetRadioButtonSettingDto, StumeetRadioGroup168ViewHolder>(
+        StumeetRadioGroup168DiffCallback()
     ) {
 
     var itemClick: ItemClick? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StumeetRadioGroupViewHolder {
-        val binding = ComponentRadioButtonItemBinding.inflate(
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): StumeetRadioGroup168ViewHolder {
+        val binding = ComponentRadioButtonItem168Binding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return StumeetRadioGroupViewHolder(binding)
+        return StumeetRadioGroup168ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: StumeetRadioGroupViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: StumeetRadioGroup168ViewHolder, position: Int) {
         holder.bind(getItem(position))
         if (itemClick != null && isSelectable) {
             holder.itemBinding.tvBasicRadioButton.setOnClickListener { view ->
@@ -36,7 +39,7 @@ class StumeetRadioGroupAdapter(private val isSelectable : Boolean) :
 }
 
 
-class StumeetRadioGroupDiffCallback : DiffUtil.ItemCallback<StumeetRadioButtonSettingDto>() {
+class StumeetRadioGroup168DiffCallback : DiffUtil.ItemCallback<StumeetRadioButtonSettingDto>() {
     override fun areItemsTheSame(
         oldItem: StumeetRadioButtonSettingDto,
         newItem: StumeetRadioButtonSettingDto
