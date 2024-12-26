@@ -29,6 +29,11 @@ fun Fragment.colorOf(@ColorRes resId: Int) = ContextCompat.getColor(requireConte
 fun Fragment.drawableOf(@DrawableRes resId: Int) =
     ContextCompat.getDrawable(requireContext(), resId)
 
+fun Fragment.dpToPx(dp: Int): Int {
+    val density = resources.displayMetrics.density
+    return (dp * density).toInt()
+}
+
 val Fragment.viewLifeCycle
     get() = viewLifecycleOwner.lifecycle
 
