@@ -43,4 +43,7 @@
     <string name="enum_review_tag_pinpoint_teacher">쪽집게 강사</string>
     <string name="enum_study_sort_active">활성</string>
     <string name="enum_study_sort_finished">완료</string>
+    <string name="component_popup_no">아니요</string>
+    <string name="component_popup_yes">예</string>
+    <string name="test_popup_question"><![CDATA[<b> Are you sure? </b> popup test]]></string>
 </resources>
