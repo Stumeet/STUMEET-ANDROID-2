@@ -1,15 +1,15 @@
-package com.aramtory.stumeet.coreui.component.holder
+package com.aramtory.stumeet.coreui.component.radio_button.holder
 
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.aramtory.stumeet.coreui.component.data.StumeetRadioButtonSettingDto
-import com.aramtory.stumeet.databinding.ComponentRadioButtonItem124Binding
+import com.aramtory.stumeet.coreui.component.radio_button.data.StumeetRadioButtonSettingDto
+import com.aramtory.stumeet.databinding.ComponentRadioButtonItem84Binding
 
-class StumeetRadioGroup124ViewHolder(private val binding: ComponentRadioButtonItem124Binding) :
+class StumeetRadioGroup84ViewHolder(private val binding: ComponentRadioButtonItem84Binding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    private val _itemBinding: ComponentRadioButtonItem124Binding = binding
-    val itemBinding: ComponentRadioButtonItem124Binding = _itemBinding
+    private val _itemBinding: ComponentRadioButtonItem84Binding = binding
+    val itemBinding: ComponentRadioButtonItem84Binding = _itemBinding
 
     fun bind(data: StumeetRadioButtonSettingDto) {
         // text 설정

@@ -1,12 +1,12 @@
-package com.aramtory.stumeet.coreui.component.adapter
+package com.aramtory.stumeet.coreui.component.radio_button.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.aramtory.stumeet.coreui.adapter.ItemClick
-import com.aramtory.stumeet.coreui.component.data.StumeetRadioButtonSettingDto
-import com.aramtory.stumeet.coreui.component.holder.StumeetRadioGroup84ViewHolder
+import com.aramtory.stumeet.coreui.component.radio_button.data.StumeetRadioButtonSettingDto
+import com.aramtory.stumeet.coreui.component.radio_button.holder.StumeetRadioGroup84ViewHolder
 import com.aramtory.stumeet.databinding.ComponentRadioButtonItem84Binding
 
 class StumeetRadioGroup84Adapter(private val isSelectable: Boolean) :
