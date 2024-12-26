@@ -22,15 +22,18 @@
     </style>
 
     <style name="StumeetDialogTheme" parent="Theme.AppCompat.Dialog">
-        <!-- 팝업 창의 배경 설정  -->
         <item name="android:windowBackground">@drawable/shape_gray_50_radius_24</item>
-        <!-- 팝업이 화면 위에 떠 있는 모양으로 설정 -->
         <item name="android:windowIsFloating">true</item>
-        <!-- 팝업 너비를 화면 너비의 80%로 설정 -->
         <item name="android:windowMinWidthMajor">90%</item>
         <item name="android:windowMinWidthMinor">90%</item>
-        <!-- 팝업 제목 영역 숨김 -->
         <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="StumeetSnackBarTheme" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
     </style>
 
 </resources>
