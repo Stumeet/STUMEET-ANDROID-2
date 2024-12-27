@@ -14,7 +14,10 @@ abstract class BindingDialogFragment<T : ViewDataBinding>(
     @LayoutRes private val layoutRes: Int
 ) : DialogFragment() {
     private var _binding: T? = null
-    protected val binding get() = requireNotNull(_binding)
+    protected val binding
+        get() = requireNotNull(_binding) {
+            "binding object is not initialized"
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater,
