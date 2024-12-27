@@ -50,4 +50,7 @@
     <string name="component_snackbar_test">테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트</string>
     <string name="component_snackbar_go_to_setting">설정 이동</string>
     <string name="component_snackbar_test_tag">StumeetSnackBar</string>
+
+    <!--Auth-->
+    <string name="tv_login_start">스터밋 시작하기</string>
 </resources>
