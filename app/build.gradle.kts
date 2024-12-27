@@ -53,7 +53,6 @@ android {
 }
 
 dependencies {
-
     // Kotlin
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
 
@@ -70,7 +69,7 @@ dependencies {
     // Matrial Design
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.navigation:navigation-fragment:2.7.6")
-    implementation("com.google.android.gms:play-services-auth:20.1.0")
+    implementation ("com.google.android.flexbox:flexbox:3.0.0")
 
     // Test Dependency
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

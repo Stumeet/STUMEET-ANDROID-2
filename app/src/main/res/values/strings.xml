@@ -47,4 +47,7 @@
     <string name="component_popup_yes">예</string>
     <string name="test_popup_question"><![CDATA[<b> Are you sure? </b> popup test]]></string>
     <string name="component_snackbar_caution">!</string>
+    <string name="component_snackbar_test">테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트</string>
+    <string name="component_snackbar_go_to_setting">설정 이동</string>
+    <string name="component_snackbar_test_tag">StumeetSnackBar</string>
 </resources>
