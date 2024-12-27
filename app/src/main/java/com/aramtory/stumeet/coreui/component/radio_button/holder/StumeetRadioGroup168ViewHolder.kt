@@ -1,8 +1,8 @@
-package com.aramtory.stumeet.coreui.component.holder
+package com.aramtory.stumeet.coreui.component.radio_button.holder
 
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.aramtory.stumeet.coreui.component.data.StumeetRadioButtonSettingDto
+import com.aramtory.stumeet.coreui.component.radio_button.data.StumeetRadioButtonSettingDto
 import com.aramtory.stumeet.databinding.ComponentRadioButtonItem168Binding
 
 class StumeetRadioGroup168ViewHolder(private val binding: ComponentRadioButtonItem168Binding) :

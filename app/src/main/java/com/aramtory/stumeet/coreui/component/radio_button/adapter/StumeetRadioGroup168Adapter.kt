@@ -1,18 +1,17 @@
-
-package com.aramtory.stumeet.coreui.component.adapter
+package com.aramtory.stumeet.coreui.component.radio_button.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.aramtory.stumeet.coreui.adapter.ItemClick
-import com.aramtory.stumeet.coreui.component.data.StumeetRadioButtonSettingDto
-import com.aramtory.stumeet.coreui.component.holder.StumeetRadioGroup124ViewHolder
-import com.aramtory.stumeet.databinding.ComponentRadioButtonItem124Binding
+import com.aramtory.stumeet.coreui.component.radio_button.data.StumeetRadioButtonSettingDto
+import com.aramtory.stumeet.coreui.component.radio_button.holder.StumeetRadioGroup168ViewHolder
+import com.aramtory.stumeet.databinding.ComponentRadioButtonItem168Binding
 
-class StumeetRadioGroup124Adapter(private val isSelectable: Boolean) :
-    ListAdapter<StumeetRadioButtonSettingDto, StumeetRadioGroup124ViewHolder>(
-        StumeetRadioGroup124DiffCallback()
+class StumeetRadioGroup168Adapter(private val isSelectable: Boolean) :
+    ListAdapter<StumeetRadioButtonSettingDto, StumeetRadioGroup168ViewHolder>(
+        StumeetRadioGroup168DiffCallback()
     ) {
 
     var itemClick: ItemClick? = null
@@ -20,16 +19,16 @@ class StumeetRadioGroup124Adapter(private val isSelectable: Boolean) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): StumeetRadioGroup124ViewHolder {
-        val binding = ComponentRadioButtonItem124Binding.inflate(
+    ): StumeetRadioGroup168ViewHolder {
+        val binding = ComponentRadioButtonItem168Binding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return StumeetRadioGroup124ViewHolder(binding)
+        return StumeetRadioGroup168ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: StumeetRadioGroup124ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: StumeetRadioGroup168ViewHolder, position: Int) {
         holder.bind(getItem(position))
         if (itemClick != null && isSelectable) {
             holder.itemBinding.tvBasicRadioButton.setOnClickListener { view ->
@@ -40,7 +39,7 @@ class StumeetRadioGroup124Adapter(private val isSelectable: Boolean) :
 }
 
 
-class StumeetRadioGroup124DiffCallback : DiffUtil.ItemCallback<StumeetRadioButtonSettingDto>() {
+class StumeetRadioGroup168DiffCallback : DiffUtil.ItemCallback<StumeetRadioButtonSettingDto>() {
     override fun areItemsTheSame(
         oldItem: StumeetRadioButtonSettingDto,
         newItem: StumeetRadioButtonSettingDto

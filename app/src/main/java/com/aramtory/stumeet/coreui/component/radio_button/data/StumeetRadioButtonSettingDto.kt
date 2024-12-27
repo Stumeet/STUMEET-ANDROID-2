@@ -1,4 +1,4 @@
-package com.aramtory.stumeet.coreui.component.data
+package com.aramtory.stumeet.coreui.component.radio_button.data
 
 data class StumeetRadioButtonSettingDto(
     val id: Int,
