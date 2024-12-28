@@ -7,6 +7,10 @@ plugins {
     kotlin("plugin.serialization") version "1.7.20"
 }
 
+val properties = Properties().apply {
+    load(rootProject.file("local.properties").inputStream())
+}
+
 android {
     namespace = "com.aramtory.stumeet"
     compileSdk = 34
@@ -22,6 +26,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        val appKey = properties["native.app.key"] as? String ?: ""
+
+        manifestPlaceholders["appKey"] = properties["native.app.key"] as String
+        buildConfigField("String", "NATIVE_APP_KEY", "\"${appKey}\"")
     }
 
     buildTypes {
