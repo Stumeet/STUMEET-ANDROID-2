@@ -53,4 +53,10 @@
 
     <!--Auth-->
     <string name="tv_login_start">스터밋 시작하기</string>
+    <string name="tv_signup_toolbar">프로필 설정</string>
+    <string name="tv_profile_title">프로필 사진을 설정해주세요.</string>
+    <string name="fab_profile_add">프로필 이미지 추가</string>
+
+    <!--Button-->
+    <string name="btn_next">다음</string>
 </resources>
