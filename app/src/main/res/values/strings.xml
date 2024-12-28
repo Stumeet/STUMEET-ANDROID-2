@@ -59,6 +59,7 @@
     <string name="tv_name_title">닉네임을 입력해주세요.</string>
     <string name="hint_name_input">영어 대/소문자, 한글 10글자 이내</string>
     <string name="tv_name_counter">%1$d/%2$d</string>
+    <string name="tv_region_title">지역을 선택해주세요.</string>
 
     <!--Button-->
     <string name="btn_next">다음</string>
