@@ -50,4 +50,21 @@
     <string name="component_snackbar_test">테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트</string>
     <string name="component_snackbar_go_to_setting">설정 이동</string>
     <string name="component_snackbar_test_tag">StumeetSnackBar</string>
+
+    <!--Auth-->
+    <string name="tv_login_start">스터밋 시작하기</string>
+    <string name="tv_signup_toolbar">프로필 설정</string>
+    <string name="tv_profile_title">프로필 사진을 설정해주세요.</string>
+    <string name="fab_profile_add">프로필 이미지 추가</string>
+    <string name="tv_name_title">닉네임을 입력해주세요.</string>
+    <string name="hint_name_input">영어 대/소문자, 한글 10글자 이내</string>
+    <string name="tv_name_counter">%1$d/%2$d</string>
+    <string name="tv_region_title">지역을 선택해주세요.</string>
+    <string name="tv_field_title">분야를 선택해주세요.</string>
+    <string name="hint_field_search">Search</string>
+    <string name="description_field_search">분야 검색</string>
+    <string name="tv_signup_success">스터밋에 오신걸 환영해요!</string>
+
+    <!--Button-->
+    <string name="btn_next">다음</string>
 </resources>
