@@ -1,23 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
     app:startDestination="@id/navigation_home">
 
     <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.aramtory.stumeet.presentation.auth.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_profile_image"
+            app:destination="@id/fragment_profile_image"
+            app:popUpTo="@id/fragment_login"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
         android:id="@+id/navigation_home"
         android:name="com.aramtory.stumeet.presentation.home.HomeFragment"
-        android:label="HomeStumeetFragment" />
+        android:label="HomeStumeetFragment"
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_study"
         android:name="com.aramtory.stumeet.presentation.study.StudyFragment"
-        android:label="StudyStumeetFragment" />
+        android:label="StudyStumeetFragment"
+        tools:layout="@layout/fragment_study" />
     <fragment
         android:id="@+id/navigation_calendar"
         android:name="com.aramtory.stumeet.presentation.calendar.CalendarFragment"
-        android:label="CalendarStumeetFragment" />
+        android:label="CalendarStumeetFragment"
+        tools:layout="@layout/fragment_calendar" />
     <fragment
         android:id="@+id/navigation_my"
         android:name="com.aramtory.stumeet.presentation.my.MyFragment"
-        android:label="MyStumeetFragment" />
+        android:label="MyStumeetFragment"
+        tools:layout="@layout/fragment_my" />
+    <fragment
+        android:id="@+id/fragment_profile_image"
+        android:name="com.aramtory.stumeet.presentation.auth.signup.ProfileImageFragment"
+        android:label="ProfileImageFragment"
+        tools:layout="@layout/fragment_profile_image" />
 </navigation>
