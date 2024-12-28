@@ -63,6 +63,7 @@
     <string name="tv_field_title">분야를 선택해주세요.</string>
     <string name="hint_field_search">Search</string>
     <string name="description_field_search">분야 검색</string>
+    <string name="tv_signup_success">스터밋에 오신걸 환영해요!</string>
 
     <!--Button-->
     <string name="btn_next">다음</string>
