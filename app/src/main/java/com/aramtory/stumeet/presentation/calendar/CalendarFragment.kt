@@ -18,79 +18,6 @@ class CalendarFragment :
     com.aramtory.stumeet.coreui.base.BindingFragment<FragmentCalendarBinding>(R.layout.fragment_calendar) {
     private lateinit var activityBriefListFragment: ActivityBriefListFragment
 
-    private val exampleItems = listOf(
-        StudyActivityBriefListResDto.Item(
-            id = 1,
-            category = "ASSIGNMENT",
-            createdAt = "2024-12-01T10:00:00",
-            title = " 1",
-            location = "Library",
-            startDate = "2024-12-02T14:00:00",
-            endDate = "2024-12-30T16:00:00",
-            status = "ONGOING"
-        ),
-        StudyActivityBriefListResDto.Item(
-            id = 2,
-            category = "MEET",
-            createdAt = "2024-12-30T00:00:00",
-            title = "2",
-            location = "Conference Room",
-            startDate = "2024-12-30T15:00:00",
-            endDate = "2024-12-03T16:30:00",
-            status = "UPCOMING"
-        ),
-        StudyActivityBriefListResDto.Item(
-            id = 3,
-            category = "MEET",
-            createdAt = "2024-12-01T11:00:00",
-            title = "3",
-            location = "Conference Room",
-            startDate = "2024-12-30T17:00:00",
-            endDate = "2024-12-03T16:30:00",
-            status = "UPCOMING"
-        ),
-        StudyActivityBriefListResDto.Item(
-            id = 4,
-            category = "MEET",
-            createdAt = "2025-12-01T11:00:00",
-            title = "4",
-            location = "Conference Room",
-            startDate = "2024-12-31T15:00:00",
-            endDate = "2024-12-03T16:30:00",
-            status = "UPCOMING"
-        ),
-        StudyActivityBriefListResDto.Item(
-            id = 5,
-            category = "MEET",
-            createdAt = "2024-02-20T11:00:00",
-            title = "5",
-            location = "Conference Room",
-            startDate = "2024-02-20T15:00:00",
-            endDate = "2024-12-03T16:30:00",
-            status = "UPCOMING"
-        ),
-        StudyActivityBriefListResDto.Item(
-            id = 6,
-            category = "MEET",
-            createdAt = "2024-03-20T11:00:00",
-            title = "6",
-            location = "Conference Room",
-            startDate = "2024-03-20T11:00:00",
-            endDate = "2024-12-03T16:30:00",
-            status = "UPCOMING"
-        ),
-        StudyActivityBriefListResDto.Item(
-            id = 7,
-            category = "DEFAULT",
-            createdAt = "2024-03-20T11:00:00",
-            title = "7",
-            location = "Conference Room",
-            startDate = "2024-03-20T11:00:00",
-            endDate = "2024-12-03T16:30:00",
-            status = "UPCOMING"
-        )
-    )
-
     // 할 일이 있는 날짜
     private lateinit var datesWithEvents: Set<CalendarDay>
     private val selected = CalendarDay.today()
@@ -242,4 +169,77 @@ class CalendarFragment :
         val month = binding.cvCalendar.currentDate.month
         binding.tvCalendarYearMonth.text = getString(R.string.tv_calendar_year_month, year, month)
     }
+
+    private val exampleItems = listOf(
+        StudyActivityBriefListResDto.Item(
+            id = 1,
+            category = "ASSIGNMENT",
+            createdAt = "2024-12-01T10:00:00",
+            title = " 1",
+            location = "Library",
+            startDate = "2024-12-02T14:00:00",
+            endDate = "2024-12-30T16:00:00",
+            status = "ONGOING"
+        ),
+        StudyActivityBriefListResDto.Item(
+            id = 2,
+            category = "MEET",
+            createdAt = "2024-12-30T00:00:00",
+            title = "2",
+            location = "Conference Room",
+            startDate = "2024-12-30T15:00:00",
+            endDate = "2024-12-03T16:30:00",
+            status = "UPCOMING"
+        ),
+        StudyActivityBriefListResDto.Item(
+            id = 3,
+            category = "MEET",
+            createdAt = "2024-12-01T11:00:00",
+            title = "3",
+            location = "Conference Room",
+            startDate = "2024-12-30T17:00:00",
+            endDate = "2024-12-03T16:30:00",
+            status = "UPCOMING"
+        ),
+        StudyActivityBriefListResDto.Item(
+            id = 4,
+            category = "MEET",
+            createdAt = "2025-12-01T11:00:00",
+            title = "4",
+            location = "Conference Room",
+            startDate = "2024-12-31T15:00:00",
+            endDate = "2024-12-03T16:30:00",
+            status = "UPCOMING"
+        ),
+        StudyActivityBriefListResDto.Item(
+            id = 5,
+            category = "MEET",
+            createdAt = "2024-02-20T11:00:00",
+            title = "5",
+            location = "Conference Room",
+            startDate = "2024-02-20T15:00:00",
+            endDate = "2024-12-03T16:30:00",
+            status = "UPCOMING"
+        ),
+        StudyActivityBriefListResDto.Item(
+            id = 6,
+            category = "MEET",
+            createdAt = "2024-03-20T11:00:00",
+            title = "6",
+            location = "Conference Room",
+            startDate = "2024-03-20T11:00:00",
+            endDate = "2024-12-03T16:30:00",
+            status = "UPCOMING"
+        ),
+        StudyActivityBriefListResDto.Item(
+            id = 7,
+            category = "DEFAULT",
+            createdAt = "2024-03-20T11:00:00",
+            title = "7",
+            location = "Conference Room",
+            startDate = "2024-03-20T11:00:00",
+            endDate = "2024-12-03T16:30:00",
+            status = "UPCOMING"
+        )
+    )
 }
