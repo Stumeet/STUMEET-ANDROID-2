@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_onboarding_image"
+            android:layout_width="match_parent"
+            android:layout_height="529dp"
+            android:background="@drawable/img_onboarding_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_onboarding_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.Stumeet.Title3"
+            android:textColor="@color/primary_700"
+            app:layout_constraintBottom_toTopOf="@id/v_onboarding_line"
+            app:layout_constraintTop_toBottomOf="@id/iv_onboarding_image"
+            tools:text="칭찬을 주고 받으며 포도알을 채워나가요!" />
+
+        <View
+            android:id="@+id/v_onboarding_line"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="128dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_onboarding_image" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
