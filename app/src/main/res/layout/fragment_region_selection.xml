@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_50">
+
+        <include
+            android:id="@+id/layout_app_bar"
+            layout="@layout/view_signup_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:progress="@{3}"
+            app:visible="@{true}" />
+
+        <TextView
+            android:id="@+id/tv_region_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/tv_region_title"
+            android:textAppearance="@style/TextAppearance.Stumeet.Title3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_app_bar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_region_radio"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:clipToPadding="false"
+            android:padding="16dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/layout_region_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_region_title"
+            tools:listitem="@layout/component_radio_button_item_16_8" />
+
+        <include
+            android:id="@+id/layout_region_btn"
+            layout="@layout/component_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

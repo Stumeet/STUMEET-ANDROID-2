@@ -8,12 +8,12 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        maven(url="https://jitpack.io")
         google()
         mavenCentral()
+        maven(url = "https://jitpack.io")
+        maven(url = "https://devrepo.kakao.com/nexus/content/groups/public/")
     }
 }
 
 rootProject.name = "Stumeet"
 include(":app")
- 

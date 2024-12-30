@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_50">
+
+        <include
+            android:id="@+id/layout_app_bar"
+            layout="@layout/view_signup_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:progress="@{4}"
+            app:visible="@{true}" />
+
+        <TextView
+            android:id="@+id/tv_field_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/tv_field_title"
+            android:textAppearance="@style/TextAppearance.Stumeet.Title3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_app_bar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_field_radio"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/gray_50"
+            android:clipToPadding="false"
+            android:padding="16dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@id/iv_field_search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_field_search"
+            tools:listitem="@layout/component_radio_button_item_16_8" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search_results"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/shape_gray_75_stroke_radius_16"
+            android:paddingTop="56dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/layout_field_btn"
+            app:layout_constraintEnd_toEndOf="@id/et_field_search"
+            app:layout_constraintStart_toStartOf="@id/et_field_search"
+            app:layout_constraintTop_toTopOf="@id/et_field_search"
+            tools:listitem="@layout/item_search" />
+
+        <EditText
+            android:id="@+id/et_field_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/shape_primary_700_radius_16"
+            android:backgroundTint="@color/primary_50"
+            android:hint="@string/hint_field_search"
+            android:maxLines="1"
+            android:paddingVertical="18dp"
+            android:paddingStart="24dp"
+            android:textAppearance="@style/TextAppearance.Stumeet.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_field_title" />
+
+        <ImageButton
+            android:id="@+id/iv_field_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/description_field_search"
+            android:src="@drawable/ic_field_search"
+            app:layout_constraintBottom_toBottomOf="@id/et_field_search"
+            app:layout_constraintEnd_toEndOf="@id/et_field_search"
+            app:layout_constraintTop_toTopOf="@id/et_field_search" />
+
+        <include
+            android:id="@+id/layout_field_btn"
+            layout="@layout/component_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

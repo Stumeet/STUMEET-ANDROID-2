@@ -7,6 +7,10 @@ plugins {
     kotlin("plugin.serialization") version "1.7.20"
 }
 
+val properties = Properties().apply {
+    load(rootProject.file("local.properties").inputStream())
+}
+
 android {
     namespace = "com.aramtory.stumeet"
     compileSdk = 34
@@ -22,6 +26,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        val appKey = properties["native.app.key"] as? String ?: ""
+
+        manifestPlaceholders["appKey"] = properties["native.app.key"] as String
+        buildConfigField("String", "NATIVE_APP_KEY", "\"${appKey}\"")
     }
 
     buildTypes {
@@ -69,7 +78,7 @@ dependencies {
     // Matrial Design
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.navigation:navigation-fragment:2.7.6")
-    implementation ("com.google.android.flexbox:flexbox:3.0.0")
+    implementation("com.google.android.flexbox:flexbox:3.0.0")
 
     // Test Dependency
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
@@ -87,4 +96,7 @@ dependencies {
     implementation("io.coil-kt:coil:2.3.0")
     implementation("com.github.prolificinteractive:material-calendarview:2.0.1")
     implementation("me.relex:circleindicator:2.1.6")
+
+    // Kakao
+    implementation("com.kakao.sdk:v2-user:2.15.0")
 }
