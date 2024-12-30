@@ -85,4 +85,6 @@ dependencies {
     implementation("com.jakewharton.timber:timber:5.0.1")
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
     implementation("io.coil-kt:coil:2.3.0")
+    implementation("com.github.prolificinteractive:material-calendarview:2.0.1")
+    implementation("me.relex:circleindicator:2.1.6")
 }
