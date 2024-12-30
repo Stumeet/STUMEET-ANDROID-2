@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="buttonText"
+            type="String" />
+    </data>
 
     <TextView
         android:id="@+id/tv_basic_button"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="10dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/selector_button_background"
         android:paddingVertical="24dp"
-        android:enabled="false"
+        android:enabled="true"
+        android:text="@{buttonText}"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,4 +27,4 @@
         android:textAppearance="@style/TextAppearance.Stumeet.SubTitle1"
         android:textColor="@color/gray_50"
         tools:text="test" />
-</merge>
+</layout>
