@@ -102,6 +102,12 @@
         <item name="lineHeight">17dp</item>
     </style>
 
+    <style name="TextAppearance.Stumeet.Body5">
+        <item name="fontFamily">@font/font_pretendard_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">17dp</item>
+    </style>
+
     <!--Caption-->
     <style name="TextAppearance.Stumeet.Caption1">
         <item name="fontFamily">@font/font_pretendard_medium</item>
@@ -114,5 +120,14 @@
         <item name="android:textSize">12sp</item>
         <item name="lineHeight">14dp</item>
     </style>
+
+    <!--Calendar Week-->
+    <style name="TextAppearance.Stumeet.CalendarWeek">
+        <item name="fontFamily">@font/font_pretendard_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">14dp</item>
+        <item name="android:textColor">@color/gray_400</item>
+    </style>
+
 
 </resources>
