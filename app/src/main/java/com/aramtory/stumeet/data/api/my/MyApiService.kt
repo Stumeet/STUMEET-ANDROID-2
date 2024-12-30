@@ -1,7 +1,7 @@
 package com.aramtory.stumeet.data.api.my
 
 import com.aramtory.stumeet.data.dto.common.BaseResponseNullable
-import com.aramtory.stumeet.data.dto.common.enums.ReviewSortType
+import com.aramtory.stumeet.data.enums.ReviewSortType
 import com.aramtory.stumeet.data.dto.req.my.ReviewReqDto
 import com.aramtory.stumeet.data.dto.res.my.MyResDto
 import com.aramtory.stumeet.data.dto.res.my.ReviewListResDto

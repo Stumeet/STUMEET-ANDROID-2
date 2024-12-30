@@ -1,7 +1,7 @@
 package com.aramtory.stumeet.data.dto.req.study
 
-import com.aramtory.stumeet.data.dto.common.enums.ReportReasonType
-import com.aramtory.stumeet.data.dto.common.enums.ReportType
+import com.aramtory.stumeet.data.enums.ReportReasonType
+import com.aramtory.stumeet.data.enums.ReportType
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

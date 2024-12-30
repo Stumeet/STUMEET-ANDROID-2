@@ -1,4 +1,4 @@
-package com.aramtory.stumeet.data.dto.common.enums
+package com.aramtory.stumeet.data.enums
 
 import com.aramtory.stumeet.R
 
