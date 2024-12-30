@@ -33,4 +33,6 @@
     <color name="gray_900">#FF18181B</color>
     <color name="black">#FF000000</color>
 
+    <!--etc color-->
+    <color name="tv_counter">#BCBDC6</color>
 </resources>
