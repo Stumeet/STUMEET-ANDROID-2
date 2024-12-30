@@ -203,13 +203,18 @@ class CalendarFragment :
         }
 
         // 필터링 결과에 따라 UI 업데이트
-        if (filteredItems.isEmpty()) {
-            binding.ivCalendarEmptyView.visibility = View.VISIBLE
-            binding.layoutActivityBriefList.visibility = View.GONE
-        } else {
-            binding.ivCalendarEmptyView.visibility = View.GONE
-            binding.layoutActivityBriefList.visibility = View.VISIBLE
-            activityBriefListFragment.submitList(filteredItems)
+        with(binding) {
+            if (filteredItems.isEmpty()) {
+                ivCalendarEmptyView.visibility = View.VISIBLE
+                layoutActivityBriefList.visibility = View.GONE
+            } else {
+                ivCalendarEmptyView.visibility = View.GONE
+                layoutActivityBriefList.visibility = View.VISIBLE
+                layoutActivityBriefList.post {
+                    activityBriefListFragment.submitList(filteredItems)
+                }
+            }
+
         }
     }
 
