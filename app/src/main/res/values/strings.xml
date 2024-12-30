@@ -43,6 +43,9 @@
     <string name="enum_review_tag_pinpoint_teacher">쪽집게 강사</string>
     <string name="enum_study_sort_active">활성</string>
     <string name="enum_study_sort_finished">완료</string>
+    <string name="enum_study_activity_type_meet">모임</string>
+    <string name="enum_study_activity_type_assignment">과제</string>
+    <string name="enum_study_activity_type_default">자유</string>
     <string name="component_popup_no">아니요</string>
     <string name="component_popup_yes">예</string>
     <string name="test_popup_question"><![CDATA[<b> Are you sure? </b> popup test]]></string>
@@ -50,4 +53,25 @@
     <string name="component_snackbar_test">테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트</string>
     <string name="component_snackbar_go_to_setting">설정 이동</string>
     <string name="component_snackbar_test_tag">StumeetSnackBar</string>
+    <string name="tv_activity_remain_time_minutes">%1$d분 남음</string>
+    <string name="tv_activity_remain_time_hours">%1$d시간 %2$d분 남음</string>
+    <string name="tv_activity_remain_time_days">%1$d일 남음</string>
+    <string name="tv_activity_remain_time_weeks">%1$d주 남음</string>
+    <string name="tv_activity_remain_time_months">%1$d개월 %2$d주 남음</string>
+    <string name="tv_activity_before_time_minutes">%1$d분 전</string>
+    <string name="tv_activity_before_time_hours">%1$d시간 %2$d분 전</string>
+    <string name="tv_activity_before_time_days">%1$d일 전</string>
+    <string name="tv_activity_before_time_weeks">%1$d주 전</string>
+    <string name="tv_activity_before_time_months">%1$d개월 %2$d주 전</string>
+    <string name="tv_activity_brief_done">종료</string>
+    <string name="tv_onboarding_comment_1">스터디를 생성하고 초대할 수 있어요</string>
+    <string name="tv_onboarding_comment_2">칭찬을 주고 받으며 포도알을 채워나가요!</string>
+    <string name="tv_onboarding_comment_3">스터밋으로 공부하고\n나의 포도나무를 성장시켜 보세요!</string>
+    <string name="btn_next">다음</string>
+    <string name="tv_home_recent_activity_comment">곧 일정이 시작돼요!</string>
+    <string name="tv_activity_detail_done">작성 전</string>
+    <string name="tv_calendar_year_month">%1$d년 %2$d월</string>
+    <string name="tbt_home_todo">할 일</string>
+    <string name="tbt_home_notice">공지사항</string>
+    <string name="tv_user_withdraw">알 수 없음</string>
 </resources>
