@@ -23,7 +23,7 @@ class LoginViewModel(
         _loginState.value = UiState.Loading
         kakaoLoginService.startKakaoLogin { oAuthToken, error ->
             when {
-                error != null -> UiState.Failure("카카오 로그인 실패: ${error.localizedMessage}")
+                error != null -> updateStateWithError("카카오 로그인 실패: ${error.localizedMessage}")
                 oAuthToken != null -> fetchAccessTokenFromServer(oAuthToken.accessToken)
             }
         }
@@ -48,5 +48,9 @@ class LoginViewModel(
             accessToken = accessTokenResDto.accessToken,
             refreshToken = accessTokenResDto.refreshToken
         )
+    }
+
+    private fun updateStateWithError(message: String) {
+        _loginState.value = UiState.Failure(message)
     }
 }
