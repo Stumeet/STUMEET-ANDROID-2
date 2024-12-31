@@ -1,5 +1,17 @@
 package com.aramtory.stumeet.data.api.study
 
+import com.aramtory.stumeet.data.api.ApiKeyStorage.ACTIVITIES
+import com.aramtory.stumeet.data.api.ApiKeyStorage.ADMIN
+import com.aramtory.stumeet.data.api.ApiKeyStorage.API
+import com.aramtory.stumeet.data.api.ApiKeyStorage.AVAILABLE
+import com.aramtory.stumeet.data.api.ApiKeyStorage.CHECK
+import com.aramtory.stumeet.data.api.ApiKeyStorage.DELEGATE
+import com.aramtory.stumeet.data.api.ApiKeyStorage.GRAPES
+import com.aramtory.stumeet.data.api.ApiKeyStorage.ME
+import com.aramtory.stumeet.data.api.ApiKeyStorage.MEMBER
+import com.aramtory.stumeet.data.api.ApiKeyStorage.STATUS
+import com.aramtory.stumeet.data.api.ApiKeyStorage.STUDIES
+import com.aramtory.stumeet.data.api.ApiKeyStorage.V1
 import com.aramtory.stumeet.data.dto.common.BaseResponseNullable
 import com.aramtory.stumeet.data.dto.res.study.study_member.CanSendGrapeResDto
 import com.aramtory.stumeet.data.dto.res.study.study_member.IsAdminResDto
@@ -13,21 +25,6 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface StudyMemberApiService {
-    companion object {
-        const val V1 = "v1"
-        const val API = "api"
-        const val STUDIES = "studies"
-        const val MEMBER = "members"
-        const val ME = "me"
-        const val ADMIN = "admin"
-        const val CHECK = "check"
-        const val DELEGATE = "delegate"
-        const val ACTIVITIES = "activities"
-        const val STATUS = "status"
-        const val GRAPES = "grapes"
-        const val AVAILABLE = "available"
-    }
-
     /** 멤버 기본 **/
     // 4.5 스터디 가입
     @POST("/${API}/${V1}/${STUDIES}/{studyId}/${MEMBER}")

@@ -1,9 +1,23 @@
 package com.aramtory.stumeet.data.api.signup
 
+import com.aramtory.stumeet.data.api.ApiKeyStorage.API
+import com.aramtory.stumeet.data.api.ApiKeyStorage.AUTH
+import com.aramtory.stumeet.data.api.ApiKeyStorage.AUTHORIZATION
+import com.aramtory.stumeet.data.api.ApiKeyStorage.KAKAO
+import com.aramtory.stumeet.data.api.ApiKeyStorage.MEMBERS
+import com.aramtory.stumeet.data.api.ApiKeyStorage.NOTIFICATION_TOKEN
+import com.aramtory.stumeet.data.api.ApiKeyStorage.OAUTH_PROVIDE
+import com.aramtory.stumeet.data.api.ApiKeyStorage.PROFESSIONS
+import com.aramtory.stumeet.data.api.ApiKeyStorage.RENEW
+import com.aramtory.stumeet.data.api.ApiKeyStorage.SIGNUP
+import com.aramtory.stumeet.data.api.ApiKeyStorage.V1
+import com.aramtory.stumeet.data.api.ApiKeyStorage.VALIDATE_NICKNAME
 import com.aramtory.stumeet.data.dto.common.BaseResponseNullable
 import com.aramtory.stumeet.data.dto.req.signup.NotificationReqDto
+import com.aramtory.stumeet.data.dto.req.signup.TokenRefreshReqDto
 import com.aramtory.stumeet.data.dto.res.signup.AccessTokenResDto
 import com.aramtory.stumeet.data.dto.res.signup.PartListResDto
+import com.aramtory.stumeet.data.dto.res.signup.TokenRefreshResDto
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.Body
@@ -15,21 +29,6 @@ import retrofit2.http.Part
 import retrofit2.http.Query
 
 interface SignUpApiService {
-    companion object {
-        const val V1 = "v1"
-        const val API = "api"
-        const val AUTH = "oauth"
-        const val AUTHORIZATION = "Authorization"
-        const val OAUTH_PROVIDE = "X-OAUTH-PROVIDER"
-        const val KAKAO = "kakao"
-        const val MEMBERS = "members"
-        const val VALIDATE_NICKNAME = "validate-nickname"
-        const val PROFESSIONS = "professions"
-        const val SIGNUP = "signup"
-        const val NOTIFICATION_TOKEN = "notification-token"
-        const val RENEW = "renew"
-    }
-
     /**로그인**/
     // 1.1 소셜 로그인
     @POST("/${API}/${V1}/${AUTH}")
@@ -37,6 +36,12 @@ interface SignUpApiService {
         @Header(AUTHORIZATION) oauthAuthorization: String,
         @Header(OAUTH_PROVIDE) provide: String = KAKAO,
     ): BaseResponseNullable<AccessTokenResDto>
+
+    // 1.4 토큰 재발급
+    @POST("/api/v1/tokens")
+    suspend fun refreshToken(
+        @Body tokenRefreshRequest: TokenRefreshReqDto
+    ): BaseResponseNullable<TokenRefreshResDto>
 
     // 8.1 알림 토큰 갱신
     @POST("/${API}/${V1}/${NOTIFICATION_TOKEN}/${RENEW}")

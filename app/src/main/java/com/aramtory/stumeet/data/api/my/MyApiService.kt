@@ -1,5 +1,16 @@
 package com.aramtory.stumeet.data.api.my
 
+import com.aramtory.stumeet.data.api.ApiKeyStorage.API
+import com.aramtory.stumeet.data.api.ApiKeyStorage.HIDE
+import com.aramtory.stumeet.data.api.ApiKeyStorage.LEGACY
+import com.aramtory.stumeet.data.api.ApiKeyStorage.LOGOUT
+import com.aramtory.stumeet.data.api.ApiKeyStorage.ME
+import com.aramtory.stumeet.data.api.ApiKeyStorage.MEMBERS
+import com.aramtory.stumeet.data.api.ApiKeyStorage.REVIEWS
+import com.aramtory.stumeet.data.api.ApiKeyStorage.STATS
+import com.aramtory.stumeet.data.api.ApiKeyStorage.STUDIES
+import com.aramtory.stumeet.data.api.ApiKeyStorage.TAGS
+import com.aramtory.stumeet.data.api.ApiKeyStorage.V1
 import com.aramtory.stumeet.data.dto.common.BaseResponseNullable
 import com.aramtory.stumeet.data.dto.common.enums.ReviewSortType
 import com.aramtory.stumeet.data.dto.req.my.ReviewReqDto
@@ -14,20 +25,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface MyApiService {
-    companion object {
-        const val V1 = "v1"
-        const val API = "api"
-        const val MEMBERS = "members"
-        const val ME = "me"
-        const val REVIEWS = "reviews"
-        const val TAGS = "tags"
-        const val STATS = "stats"
-        const val STUDIES = "studies"
-        const val LEGACY = "legacy"
-        const val HIDE = "hide"
-        const val LOGOUT = "logout"
-    }
-
     /**사용자 정보 처리**/
     // 1.6 내 정보 조회
     @GET("/${API}/${V1}/${MEMBERS}/${ME}")

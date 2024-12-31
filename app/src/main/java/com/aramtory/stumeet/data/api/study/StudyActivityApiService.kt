@@ -1,5 +1,12 @@
 package com.aramtory.stumeet.data.api.study
 
+import com.aramtory.stumeet.data.api.ApiKeyStorage.ACTIVITIES
+import com.aramtory.stumeet.data.api.ApiKeyStorage.API
+import com.aramtory.stumeet.data.api.ApiKeyStorage.BRIEF
+import com.aramtory.stumeet.data.api.ApiKeyStorage.DETAIL
+import com.aramtory.stumeet.data.api.ApiKeyStorage.MEMBER
+import com.aramtory.stumeet.data.api.ApiKeyStorage.STUDIES
+import com.aramtory.stumeet.data.api.ApiKeyStorage.V1
 import com.aramtory.stumeet.data.dto.common.BaseResponseNullable
 import com.aramtory.stumeet.data.dto.req.study.study_activity.StudyActivityReqDto
 import com.aramtory.stumeet.data.dto.res.study.study_activity.StudyActivityBriefListResDto
@@ -15,15 +22,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface StudyActivityApiService {
-    companion object {
-        const val V1 = "v1"
-        const val API = "api"
-        const val STUDIES = "studies"
-        const val ACTIVITIES = "activities"
-        const val DETAIL = "detail"
-        const val BRIEF = "brief"
-        const val MEMBER = "members"
-    }
 
     /** 활동 CRUD **/
     // 5.1 활동 생성

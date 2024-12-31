@@ -1,5 +1,10 @@
 package com.aramtory.stumeet.data.api.study
 
+import com.aramtory.stumeet.data.api.ApiKeyStorage.API
+import com.aramtory.stumeet.data.api.ApiKeyStorage.FINISH
+import com.aramtory.stumeet.data.api.ApiKeyStorage.REPORT
+import com.aramtory.stumeet.data.api.ApiKeyStorage.STUDIES
+import com.aramtory.stumeet.data.api.ApiKeyStorage.V1
 import com.aramtory.stumeet.data.dto.common.BaseResponseNullable
 import com.aramtory.stumeet.data.dto.common.enums.StudySortType
 import com.aramtory.stumeet.data.dto.req.study.ReportReqDto
@@ -17,14 +22,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface StudyApiService {
-    companion object {
-        const val V1 = "v1"
-        const val API = "api"
-        const val STUDIES = "studies"
-        const val FINISH = "finish"
-        const val REPORT = "report"
-    }
-
     /** 스터디 챕터 **/
     // 3.2 스터디 리스트 조회
     @GET("/${API}/${V1}/${STUDIES}")

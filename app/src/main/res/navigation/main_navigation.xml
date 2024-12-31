@@ -38,7 +38,47 @@
         tools:layout="@layout/fragment_my" />
     <fragment
         android:id="@+id/fragment_profile_image"
-        android:name="com.aramtory.stumeet.presentation.auth.signup.ProfileImageFragment"
-        android:label="ProfileImageFragment"
-        tools:layout="@layout/fragment_profile_image" />
+        android:name="com.aramtory.stumeet.presentation.auth.signup.ProfileImageFragment">
+        <action
+            android:id="@+id/action_profile_image_to_nickname"
+            app:destination="@id/fragment_nickname" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_nickname"
+        android:name="com.aramtory.stumeet.presentation.auth.signup.NicknameFragment"
+        android:label="NicknameFragment"
+        tools:layout="@layout/fragment_nickname">
+        <action
+            android:id="@+id/action_nickname_to_region_selection"
+            app:destination="@id/fragment_region_selection" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_region_selection"
+        android:name="com.aramtory.stumeet.presentation.auth.signup.RegionSelectionFragment"
+        android:label="RegionSelectionFragment"
+        tools:layout="@layout/fragment_region_selection">
+        <action
+            android:id="@+id/action_region_selection_to_study_field"
+            app:destination="@id/fragment_study_field" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_study_field"
+        android:name="com.aramtory.stumeet.presentation.auth.signup.StudyFieldFragment"
+        android:label="StudyFieldFragment"
+        tools:layout="@layout/fragment_study_field">
+        <action
+            android:id="@+id/action_study_field_to_signUp_success"
+            app:destination="@id/fragment_signUp_success" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_signUp_success"
+        android:name="com.aramtory.stumeet.presentation.auth.signup.SignUpSuccessFragment"
+        android:label="SignUpSuccessFragment"
+        tools:layout="@layout/fragment_sign_up_success">
+        <action
+            android:id="@+id/action_signUp_success_to_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/fragment_signUp_success"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
