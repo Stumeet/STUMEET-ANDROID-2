@@ -2,13 +2,15 @@ package com.aramtory.stumeet.presentation.auth.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.aramtory.stumeet.data.api.signup.SignUpApiService
 
-class LoginViewModelFactory(private val kakaoLoginService: KakaoLoginService) :
-    ViewModelProvider.Factory {
+class LoginViewModelFactory(
+    private val kakaoLoginService: KakaoLoginService,
+    private val signUpApiService: SignUpApiService
+) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return LoginViewModel(kakaoLoginService) as T
+            return LoginViewModel(kakaoLoginService, signUpApiService) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
