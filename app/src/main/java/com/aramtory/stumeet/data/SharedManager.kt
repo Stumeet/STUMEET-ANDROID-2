@@ -19,25 +19,19 @@ object SharedManager {
         sharedPreferences.edit().putBoolean(AUTO_LOGIN, value).apply()
     }
 
-    fun checkLogin(): Boolean {
-        return sharedPreferences.getBoolean(AUTO_LOGIN, false)
-    }
+    fun checkLogin(): Boolean = sharedPreferences.getBoolean(AUTO_LOGIN, false)
 
     fun saveTokens(accessToken: String, refreshToken: String) {
         sharedPreferences.edit().apply {
-            putString(ACCESS_TOKEN, "Bearer $accessToken")
-            putString(REFRESH_TOKEN, "Bearer $refreshToken")
+            putString(ACCESS_TOKEN, accessToken)
+            putString(REFRESH_TOKEN, refreshToken)
             apply()
         }
     }
 
-    fun getAccessToken(): String? {
-        return sharedPreferences.getString(ACCESS_TOKEN, null)
-    }
+    fun getAccessToken(): String? = sharedPreferences.getString(ACCESS_TOKEN, null)?.let { "Bearer $it" }
 
-    fun getRefreshToken(): String? {
-        return sharedPreferences.getString(REFRESH_TOKEN, null)
-    }
+    fun getRefreshToken(): String? = sharedPreferences.getString(REFRESH_TOKEN, null)?.let { "Bearer $it" }
 
     fun clearTokens() {
         sharedPreferences.edit().apply {
