@@ -24,13 +24,13 @@ class LoginViewModel(
         kakaoLoginService.startKakaoLogin { oAuthToken, error ->
             when {
                 error != null -> updateStateWithError("카카오 로그인 실패: ${error.localizedMessage}")
-                oAuthToken != null -> fetchAccessTokenFromServer(oAuthToken.accessToken)
+                oAuthToken != null -> postAccessToken(oAuthToken.accessToken)
             }
         }
     }
 
     // 소셜 로그인
-    private fun fetchAccessTokenFromServer(oauthToken: String) = viewModelScope.launch {
+    private fun postAccessToken(oauthToken: String) = viewModelScope.launch {
         _loginState.value = try {
             val response = signUpApiService.postAccessToken("Bearer $oauthToken")
             response.data?.let {
