@@ -18,15 +18,18 @@ class LoginViewModel(
     private val _loginState = MutableStateFlow<UiState<AccessTokenResDto>>(UiState.Empty)
     val loginState: StateFlow<UiState<AccessTokenResDto>> = _loginState
 
+    // 카카오 로그인
     fun kakaoLogin() {
         _loginState.value = UiState.Loading
         kakaoLoginService.startKakaoLogin { oAuthToken, error ->
-            error?.let {
-                _loginState.value = UiState.Failure("카카오 로그인 실패: ${it.localizedMessage}")
-            } ?: oAuthToken?.accessToken?.let(::fetchAccessTokenFromServer)
+            when {
+                error != null -> UiState.Failure("카카오 로그인 실패: ${error.localizedMessage}")
+                oAuthToken != null -> fetchAccessTokenFromServer(oAuthToken.accessToken)
+            }
         }
     }
 
+    // 소셜 로그인
     private fun fetchAccessTokenFromServer(oauthToken: String) = viewModelScope.launch {
         _loginState.value = try {
             val response = signUpApiService.postAccessToken("Bearer $oauthToken")
@@ -39,6 +42,7 @@ class LoginViewModel(
         }
     }
 
+    // 토큰 저장
     private fun saveTokens(accessTokenResDto: AccessTokenResDto) {
         SharedManager.saveTokens(
             accessToken = accessTokenResDto.accessToken,
