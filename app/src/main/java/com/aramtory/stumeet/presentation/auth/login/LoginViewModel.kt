@@ -31,23 +31,22 @@ class LoginViewModel(
 
     // 소셜 로그인
     private fun postAccessToken(oauthToken: String) = viewModelScope.launch {
-        _loginState.value = try {
+        _loginState.value = UiState.Loading
+        runCatching {
             val response = signUpApiService.postAccessToken("Bearer $oauthToken")
-            response.data?.let {
-                saveTokens(it)
-                UiState.Success(it)
-            } ?: UiState.Failure("서버 응답이 올바르지 않습니다.")
-        } catch (e: Exception) {
-            UiState.Failure("서버 요청 실패: ${e.localizedMessage}")
+            response.data?.takeIf { it.accessToken.isNotBlank() && it.refreshToken.isNotBlank() }
+                ?.also { data ->
+                    saveTokens(data.accessToken, data.refreshToken)
+                    _loginState.value = UiState.Success(data)
+                } ?: throw IllegalStateException("Invalid server response")
+        }.onFailure { e ->
+            updateStateWithError("서버 요청 실패: ${e.localizedMessage}")
         }
     }
 
     // 토큰 저장
-    private fun saveTokens(accessTokenResDto: AccessTokenResDto) {
-        SharedManager.saveTokens(
-            accessToken = accessTokenResDto.accessToken,
-            refreshToken = accessTokenResDto.refreshToken
-        )
+    private fun saveTokens(accessToken: String, refreshToken: String) {
+        SharedManager.saveTokens(accessToken, refreshToken)
     }
 
     private fun updateStateWithError(message: String) {
