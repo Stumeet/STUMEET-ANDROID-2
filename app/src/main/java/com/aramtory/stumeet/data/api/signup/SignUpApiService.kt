@@ -14,8 +14,10 @@ import com.aramtory.stumeet.data.api.ApiKeyStorage.V1
 import com.aramtory.stumeet.data.api.ApiKeyStorage.VALIDATE_NICKNAME
 import com.aramtory.stumeet.data.dto.common.BaseResponseNullable
 import com.aramtory.stumeet.data.dto.req.signup.NotificationReqDto
+import com.aramtory.stumeet.data.dto.req.signup.TokenRefreshReqDto
 import com.aramtory.stumeet.data.dto.res.signup.AccessTokenResDto
 import com.aramtory.stumeet.data.dto.res.signup.PartListResDto
+import com.aramtory.stumeet.data.dto.res.signup.TokenRefreshResDto
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.Body
@@ -34,6 +36,12 @@ interface SignUpApiService {
         @Header(AUTHORIZATION) oauthAuthorization: String,
         @Header(OAUTH_PROVIDE) provide: String = KAKAO,
     ): BaseResponseNullable<AccessTokenResDto>
+
+    // 1.4 토큰 재발급
+    @POST("/api/v1/tokens")
+    suspend fun refreshToken(
+        @Body tokenRefreshRequest: TokenRefreshReqDto
+    ): BaseResponseNullable<TokenRefreshResDto>
 
     // 8.1 알림 토큰 갱신
     @POST("/${API}/${V1}/${NOTIFICATION_TOKEN}/${RENEW}")
