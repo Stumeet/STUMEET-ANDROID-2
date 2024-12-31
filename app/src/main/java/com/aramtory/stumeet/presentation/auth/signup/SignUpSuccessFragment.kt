@@ -36,7 +36,7 @@ class SignUpSuccessFragment :
 
     private fun initNextBtnClickListener() {
         binding.layoutSignupSuccessBtn.tvBasicButton.setOnClickListener {
-            SharedManager.saveIsLogin(true)
+            SharedManager.isFirstLogin(true)
             navigateToHomeFragment()
         }
     }
