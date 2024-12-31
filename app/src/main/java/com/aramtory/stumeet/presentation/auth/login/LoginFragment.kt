@@ -8,7 +8,6 @@ import com.aramtory.stumeet.R
 import com.aramtory.stumeet.coreui.base.BindingFragment
 import com.aramtory.stumeet.coreui.fragment.toast
 import com.aramtory.stumeet.coreui.view.UiState
-import com.aramtory.stumeet.coreui.view.UiStateModel
 import com.aramtory.stumeet.data.BaseApiPool
 import com.aramtory.stumeet.data.dto.res.signup.AccessTokenResDto
 import com.aramtory.stumeet.databinding.FragmentLoginBinding
@@ -41,19 +40,16 @@ class LoginFragment : BindingFragment<FragmentLoginBinding>(R.layout.fragment_lo
     private fun observeLoginState() {
         loginViewModel.loginState
             .flowWithLifecycle(lifecycle)
-            .onEach { state ->
-                val uiStateModel = state.getUiStateModel()
-                handleUiState(uiStateModel, state)
-            }
+            .onEach { handleLoginState(it) }
             .launchIn(lifecycleScope)
     }
 
-    private fun handleUiState(uiStateModel: UiStateModel, state: UiState<AccessTokenResDto>) {
-        when {
-            uiStateModel.isLoading -> Unit
-            uiStateModel.isSuccess -> handleLoginSuccess((state as UiState.Success).data)
-            uiStateModel.isFailure -> handleLoginFailure((state as UiState.Failure).msg)
-            uiStateModel.isEmpty -> Unit
+    private fun handleLoginState(state: UiState<AccessTokenResDto>) {
+        when (state) {
+            is UiState.Loading -> Unit
+            is UiState.Success -> handleLoginSuccess(state.data)
+            is UiState.Failure -> handleLoginFailure(state.msg)
+            is UiState.Empty -> Unit
         }
     }
 
@@ -61,7 +57,7 @@ class LoginFragment : BindingFragment<FragmentLoginBinding>(R.layout.fragment_lo
         if (data.isFirstLogin) {
             navigateToProfileImage()
         } else {
-            toast(" 로그인 성공")
+            toast("로그인 성공")
         }
     }
 
