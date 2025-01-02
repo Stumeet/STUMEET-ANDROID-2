@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Stumeet</string>
     <string name="navigation_home">홈</string>
-    <string name="navigation_study">스터디</string>
+    <string name="navigation_study">내 스터디 그룹</string>
     <string name="navigation_calendar">캘린더</string>
     <string name="navigation_my">마이</string>
     <string name="enum_review_sort_latest">최근순</string>
@@ -46,6 +46,12 @@
     <string name="enum_study_activity_type_meet">모임</string>
     <string name="enum_study_activity_type_assignment">과제</string>
     <string name="enum_study_activity_type_default">자유</string>
+    <string name="enum_level_seeds">씨앗</string>
+    <string name="enum_level_sprout">새싹</string>
+    <string name="enum_level_leaf">잎</string>
+    <string name="enum_level_flower">꽃</string>
+    <string name="enum_level_tree">나무</string>
+    <string name="enum_level_fruit">열매</string>
     <string name="component_popup_no">아니요</string>
     <string name="component_popup_yes">예</string>
     <string name="test_popup_question"><![CDATA[<b> Are you sure? </b> popup test]]></string>
@@ -73,6 +79,8 @@
     <string name="tbt_home_todo">할 일</string>
     <string name="tbt_home_notice">공지사항</string>
     <string name="tv_user_withdraw">알 수 없음</string>
+    <string name="tv_home_todo_empty">오늘은 일정이 없어요</string>
+    <string name="tv_home_todo_empty_suggest">할 일을 생성해보세요.</string>
 
     <!--Auth-->
     <string name="tv_login_start">스터밋 시작하기</string>
