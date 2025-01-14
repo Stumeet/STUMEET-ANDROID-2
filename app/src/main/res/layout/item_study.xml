@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?><?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_item_study"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_gray_50_radius_16"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="16dp">
+
+        <ImageView
+            android:id="@+id/iv_study_image"
+            android:layout_width="64dp"
+            android:layout_height="0dp"
+            android:src="@drawable/shape_gray_200_radius_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_study_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Stumeet.Body2"
+            android:textColor="@color/gray_800"
+            app:layout_constraintBottom_toTopOf="@id/tv_study_start_end_date"
+            app:layout_constraintEnd_toStartOf="@id/tv_study_member"
+            app:layout_constraintStart_toEndOf="@id/iv_study_image"
+            app:layout_constraintTop_toTopOf="@id/iv_study_image"
+            tools:text="자바를 자바" />
+
+        <TextView
+            android:id="@+id/tv_study_member"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Stumeet.Body2"
+            android:textColor="@color/primary_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_study_name"
+            app:layout_constraintTop_toTopOf="@id/tv_study_name"
+            tools:text="5" />
+
+        <TextView
+            android:id="@+id/tv_study_start_end_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.Stumeet.Body5"
+            android:textColor="@color/gray_400"
+            app:layout_constraintBottom_toBottomOf="@id/iv_study_image"
+            app:layout_constraintStart_toStartOf="@id/tv_study_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_study_name"
+            tools:text="2024.10.20 ~ 2025.02.10" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

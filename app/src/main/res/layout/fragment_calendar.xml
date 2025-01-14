@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data></data>
 
@@ -21,8 +22,8 @@
                 android:id="@+id/tb_stumeet_my_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:elevation="0dp"
                 android:background="?attr/colorPrimary"
+                android:elevation="0dp"
                 android:paddingHorizontal="24dp"
                 android:paddingVertical="14dp">
 
@@ -34,6 +35,81 @@
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
+        <TextView
+            android:id="@+id/tv_calendar_year_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:textAppearance="@style/TextAppearance.Stumeet.SubTitle1"
+            app:layout_constraintBottom_toBottomOf="@id/iv_left_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_left_arrow"
+            tools:text="2024년 1월" />
 
+        <ImageView
+            android:id="@+id/iv_left_arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginVertical="16dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_left_arrow"
+            app:layout_constraintEnd_toStartOf="@id/iv_right_arrow"
+            app:layout_constraintTop_toBottomOf="@id/abl_stumeet_my_appbarlayout" />
+
+        <ImageView
+            android:id="@+id/iv_right_arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_left_arrow" />
+
+        <View
+            android:id="@+id/v_calendar_top_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/gray_75"
+            app:layout_constraintTop_toBottomOf="@id/tv_calendar_year_month" />
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            android:id="@+id/cv_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/abl_stumeet_my_appbarlayout"
+            app:mcv_selectionColor="@android:color/transparent"
+            app:mcv_showOtherDates="defaults"
+            app:mcv_showWeekDays="true" />
+
+        <View
+            android:id="@+id/v_calendar_bottom_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_75"
+            app:layout_constraintTop_toBottomOf="@id/cv_calendar" />
+
+        <ImageView
+            android:id="@+id/iv_calendar_empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_calendar_empty_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_calendar_bottom_line" />
+
+
+        <FrameLayout
+            android:id="@+id/layout_activity_brief_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_calendar_bottom_line" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

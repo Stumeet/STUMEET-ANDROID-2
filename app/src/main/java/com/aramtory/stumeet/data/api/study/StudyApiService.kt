@@ -1,7 +1,7 @@
 package com.aramtory.stumeet.data.api.study
 
 import com.aramtory.stumeet.data.dto.common.BaseResponseNullable
-import com.aramtory.stumeet.data.dto.common.enums.StudySortType
+import com.aramtory.stumeet.data.enums.StudySortType
 import com.aramtory.stumeet.data.dto.req.study.ReportReqDto
 import com.aramtory.stumeet.data.dto.res.study.StudyDetailResDto
 import com.aramtory.stumeet.data.dto.res.study.StudyListResDto

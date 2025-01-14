@@ -1,6 +1,6 @@
 package com.aramtory.stumeet.data.dto.req.my
 
-import com.aramtory.stumeet.data.dto.common.enums.ReviewTagType
+import com.aramtory.stumeet.data.enums.ReviewTagType
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
